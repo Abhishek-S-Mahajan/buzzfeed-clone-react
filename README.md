@@ -8,7 +8,9 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 
-<hr><hr><hr>
-
-- Changed to the port from 5173 (default of Vite) to 3000 (fron-end specific)
-
+<hr />
+- Changed to the port from 5173 (default of Vite) to 3000 (front-end specific). <br />
+- The app uses state and refs to manage a dynamic quiz interface where questions are hosted locally and answers (options chosen by the user) are also tracked. <br />
+- You are using "chosenAnswerItems" and "unansweredQuesIDs" effectively to track the user's progress. The logic for managing the state of these is clear and ensures that once an answer is chosen, it is no longer available for selection, and the corresponding question is marked as answered.
+- The component listens for user interactions and adjusts the display by scrolling to the next unanswered question or to the answer block if all the questions are answered. <br />
+- useEffect is used extensively to handle side effects like data fetching, updating unanswered questions, and triggering scroll behavior based on user actions.
